@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import background from "./img/background.png";
+import background from "./img/background.jpg";
 
 // Search Bar
 import SearchBar from "./components/searchBar";
 // Nav Bar
 import NavigationBar from "./components/navbar";
+import Footer from "./components/footer";
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   callAPI() {
-    fetch("http://localhost:9000/testAPI")
+    fetch("http://localhost:9000/api")
       .then((res) => res.text())
       .then((res) => this.setState({ apiResponse: res }))
       .catch((err) => err);
@@ -24,13 +24,14 @@ class App extends Component {
   componentDidMount() {
     this.callAPI();
   }
-
   render() {
     return (
       <div className="App" style={{ backgroundImage: `url(${background})` }}>
         <NavigationBar />
         <SearchBar />
-        <p className="App-intro">{this.state.apiResponse}</p>
+        <p className="api">{this.state.apiResponse}</p>
+
+        <Footer />
       </div>
     );
   }
