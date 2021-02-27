@@ -23,7 +23,6 @@ class App extends Component {
   componentDidMount() {
     this.callAPI();
   }
-
   render() {
     return (
       <Router>
