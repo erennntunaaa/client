@@ -1,4 +1,5 @@
 body {
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,3 +12,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.meta-data-container.h1{
+  text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2.2em;
+}
+
+.tagline {
+  display: block;
+    padding-bottom: 0.25em;
+    color: #02d177;
+    font-size: 1.1em;
+
+  }

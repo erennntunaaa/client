@@ -1,5 +1,123 @@
 .App {
+  text-align: left;
+
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up posistioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+@media screen and (max-width: 1024px) {
+
+  /* Specific to this particular image */
+  .App {
+    left: 50%;
+    margin-left: -512px;
+    /* 50% */
+  }
+}
+
+.left-panel {
+  float: left;
+  width: 250px;
+
+  background-color: #61dafb
+}
+
+.card-image {
+  height: 300px;
+}
+
+.trending-card {
+  margin: 10px 10px 10px 10px;
+
+}
+
+.trending-title {
+  text-align: left;
+}
+
+.movie-cards {
+  align-items: center;
+}
+
+.trending-box {
+  margin-top: 50px;
+
+}
+
+.meta-data {
+  display: block;
+  color: #02d177;
+  font-size: 1.6em;
+  line-height: 1.1em;
+}
+
+.trendMovies {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.listItems {
+  color: white;
+  margin-right: 10px;
+}
+
+.title {
+  color: aliceblue;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0px;
+  width: 100%;
+  padding: 15px;
   text-align: center;
+}
+
+.text-footer {
+  color: whitesmoke;
+}
+
+.fa {
+  color: rgb(245, 245, 245);
+  font-size: 2em;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .fa {
+    font-size: 1.5em;
+    padding: 10px 0px 5px 10px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .SearchBar {
+    min-height: 100vh;
+    padding-bottom: 10%;
+    flex-direction: column;
+    justify-content: start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .MovieBody {
+    min-height: 100vh;
+    padding-bottom: 10%;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .App-logo {
@@ -27,6 +145,10 @@
   color: #61dafb;
 }
 
+.api {
+  color: white;
+}
+
 .SearchBar {
   min-height: 100vh;
   display: flex;
@@ -35,4 +157,114 @@
   justify-content: center;
   font-size: calc(25px + 2vmin);
   color: white;
+}
+
+.MovieBody {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.Card {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(15px + 1vmin);
+  color: white;
+  background-color: #292d3c;
+
+}
+
+.cardBody-style {
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.95) 15%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 1) 90%);
+}
+
+.cardcont {
+  border-radius: 3px 0px 3px 3px;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.searchcont {
+  border-radius: 3px 3px 0px 3px;
+  background: rgba(0, 0, 0, 0.85);
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.card-style {
+  max-width: 30%;
+}
+
+
+.poster {
+  height: 550px;
+  border-radius: 0 0 3px 3px;
+}
+
+
+.poster-container.poster {
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+}
+
+
+.additional-details.production-list {
+  display: block;
+  margin-bottom: 20px;
+}
+
+
+.card-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.6em;
+}
+
+.genre-list {
+  display: block;
+  color: #02d177;
+  font-size: 1.4em;
+}
+
+
+/* # Search CSS */
+.search-container {
+  margin: 30px 0;
+  width: 100%;
+}
+
+
+.tt-dropdown-menu {
+  animation: fadein ease-out 0.5s;
+  min-width: 100%;
+  margin-top: 2px;
+  padding: 5px 0;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  color: lightGrey;
+}
+
+.label {
+  width: 100;
+  position: relative;
+}
+
+#outer-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85) 15%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 1) 90%);
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;
+}
+
+.additional-details {
+  margin: 35px 0 20px;
+
 }

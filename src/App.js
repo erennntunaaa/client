@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import background from "./img/background.png";
 
-// Search Bar
-import SearchBar from "./components/searchBar";
-// Nav Bar
-import NavigationBar from "./components/navbar";
+import Home from "./views/home";
+import SearchPage from "./views/searchPage";
+import Card from "./components/card";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class App extends Component {
   }
 
   callAPI() {
-    fetch("http://localhost:9000/testAPI")
+    fetch("http://localhost:9000/api")
       .then((res) => res.text())
       .then((res) => this.setState({ apiResponse: res }))
       .catch((err) => err);
@@ -27,11 +26,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" style={{ backgroundImage: `url(${background})` }}>
-        <NavigationBar />
-        <SearchBar />
-        <p className="App-intro">{this.state.apiResponse}</p>
-      </div>
+      <Router>
+        <div>
+          <Switch>
+            <Route path="/search">
+              <SearchPage />
+            </Route>
+            <Route path="/movie">
+              <Card />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
